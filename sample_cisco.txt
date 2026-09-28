@@ -1,0 +1,8 @@
+hostname Core-Router-01
+! This should PASS the HTTP rule
+no ip http server
+! This should FAIL the SSH rule
+line vty 0 4
+ transport input all
+! This is a random command the system won't recognize
+crypto key generate rsa modulus 4096

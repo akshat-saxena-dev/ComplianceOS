@@ -1,0 +1,201 @@
+{
+  "_comment": "Maps raw config line patterns (regex) to standard JSON keys and their parsed boolean/string values.",
+  "_version": "1.2.0",
+  "_last_updated": "2026-09-04",
+  "cisco": {
+    "no ip http server": {
+      "key": "http_enabled",
+      "value": false
+    },
+    "ip http server": {
+      "key": "http_enabled",
+      "value": true
+    },
+    "no ip http secure-server": {
+      "key": "https_enabled",
+      "value": false
+    },
+    "ip http secure-server": {
+      "key": "https_enabled",
+      "value": true
+    },
+    "transport input ssh": {
+      "key": "ssh_enabled",
+      "value": true
+    },
+    "transport input telnet": {
+      "key": "telnet_enabled",
+      "value": true
+    },
+    "transport input all": {
+      "key": "telnet_enabled",
+      "value": true
+    },
+    "transport input none": {
+      "key": "ssh_enabled",
+      "value": false
+    },
+    "ntp server": {
+      "key": "ntp_enabled",
+      "value": true
+    },
+    "no ntp": {
+      "key": "ntp_enabled",
+      "value": false
+    },
+    "logging on": {
+      "key": "logging_enabled",
+      "value": true
+    },
+    "no logging": {
+      "key": "logging_enabled",
+      "value": false
+    },
+    "logging host": {
+      "key": "logging_enabled",
+      "value": true
+    },
+    "snmp-server community": {
+      "key": "snmp_community_present",
+      "value": true
+    },
+    "no snmp-server community": {
+      "key": "snmp_community_present",
+      "value": false
+    },
+    "snmp-server group .* v3 priv": {
+      "key": "snmpv3_secure",
+      "value": true
+    },
+    "snmp-server group .* v3": {
+      "key": "snmpv3_enabled",
+      "value": true
+    },
+    "hostname": {
+      "key": "hostname",
+      "value": "__extract__"
+    },
+    "management http enable": {
+      "key": "http_enabled",
+      "value": true
+    }
+  },
+  "juniper": {
+    "set system services web-management": {
+      "key": "http_enabled",
+      "value": true
+    },
+    "delete system services web-management": {
+      "key": "http_enabled",
+      "value": false
+    },
+    "set system services ssh": {
+      "key": "ssh_enabled",
+      "value": true
+    },
+    "delete system services ssh": {
+      "key": "ssh_enabled",
+      "value": false
+    },
+    "set system services telnet": {
+      "key": "telnet_enabled",
+      "value": true
+    },
+    "delete system services telnet": {
+      "key": "telnet_enabled",
+      "value": false
+    },
+    "set system ntp server": {
+      "key": "ntp_enabled",
+      "value": true
+    },
+    "delete system ntp": {
+      "key": "ntp_enabled",
+      "value": false
+    },
+    "set system syslog host": {
+      "key": "logging_enabled",
+      "value": true
+    },
+    "delete system syslog": {
+      "key": "logging_enabled",
+      "value": false
+    },
+    "delete snmp community": {
+      "key": "snmp_community_present",
+      "value": false
+    },
+    "set snmp community": {
+      "key": "snmp_community_present",
+      "value": true
+    },
+    "set snmp v3": {
+      "key": "snmpv3_enabled",
+      "value": true
+    },
+    "set snmp v3.*authentication": {
+      "key": "snmpv3_secure",
+      "value": true
+    },
+    "set snmp v3.*privacy": {
+      "key": "snmpv3_secure",
+      "value": true
+    },
+    "set system host-name": {
+      "key": "hostname",
+      "value": "__extract__"
+    }
+  },
+  "palo_alto": {
+    "set deviceconfig system service disable-http yes": {
+      "key": "http_enabled",
+      "value": false
+    },
+    "set deviceconfig system service disable-http no": {
+      "key": "http_enabled",
+      "value": true
+    },
+    "set deviceconfig system service disable-telnet yes": {
+      "key": "telnet_enabled",
+      "value": false
+    },
+    "set deviceconfig system service disable-telnet no": {
+      "key": "telnet_enabled",
+      "value": true
+    },
+    "set deviceconfig system service disable-ssh no": {
+      "key": "ssh_enabled",
+      "value": true
+    },
+    "set deviceconfig system service disable-ssh yes": {
+      "key": "ssh_enabled",
+      "value": false
+    },
+    "set deviceconfig system ntp-servers": {
+      "key": "ntp_enabled",
+      "value": true
+    },
+    "set deviceconfig system syslog": {
+      "key": "logging_enabled",
+      "value": true
+    },
+    "set deviceconfig system snmpv3": {
+      "key": "snmpv3_enabled",
+      "value": true
+    },
+    "set deviceconfig system snmpv3.*auth": {
+      "key": "snmpv3_secure",
+      "value": true
+    },
+    "set deviceconfig system snmpv3.*priv": {
+      "key": "snmpv3_secure",
+      "value": true
+    }
+  },
+  "unknown": {
+    "management http enable": {
+      "key": "http_enabled",
+      "value": true
+    }
+  }
+}

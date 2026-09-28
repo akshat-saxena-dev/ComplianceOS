@@ -1,0 +1,6 @@
+set deviceconfig system service disable-http yes
+set deviceconfig system service disable-telnet yes
+set deviceconfig system ntp-servers primary-ntp-server ntp-server-address 0.pool.ntp.org
+set deviceconfig system syslog syslog-profile siem-server server 10.0.0.100
+set deviceconfig system snmpv3 views all-mibs type included oid 1
+set system host-name palo-fw-01

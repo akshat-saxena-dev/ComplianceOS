@@ -1,0 +1,67 @@
+[
+  {
+    "rule_id": "CIS-1.1",
+    "name": "Disable Insecure HTTP Server",
+    "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+    "severity": "HIGH",
+    "parameter": "http_enabled",
+    "expected_value": false,
+    "remediation": {
+      "cisco": "configure terminal\nno ip http server\nno ip http secure-server\nend\nwrite memory",
+      "juniper": "edit\ndelete system services web-management\ncommit\nexit",
+      "palo_alto": "set deviceconfig system service disable-http yes\ncommit"
+    }
+  },
+  {
+    "rule_id": "CIS-1.2",
+    "name": "Enable SSH / Disable Telnet",
+    "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+    "severity": "CRITICAL",
+    "parameter": "ssh_only",
+    "expected_value": true,
+    "remediation": {
+      "cisco": "configure terminal\nline vty 0 4\ntransport input ssh\nlogin local\nexit\ncrypto key generate rsa modulus 2048\nend\nwrite memory",
+      "juniper": "set system services ssh\ndelete system services telnet\ncommit",
+      "palo_alto": "set deviceconfig system service disable-telnet yes\ncommit"
+    }
+  },
+  {
+    "rule_id": "CIS-1.3",
+    "name": "Enable NTP Time Synchronization",
+    "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+    "severity": "MEDIUM",
+    "parameter": "ntp_enabled",
+    "expected_value": true,
+    "remediation": {
+      "cisco": "configure terminal\nntp server 0.pool.ntp.org\nntp server 1.pool.ntp.org\nend\nwrite memory",
+      "juniper": "set system ntp server 0.pool.ntp.org\nset system ntp server 1.pool.ntp.org\ncommit",
+      "palo_alto": "set deviceconfig system ntp-servers primary-ntp-server ntp-server-address 0.pool.ntp.org\ncommit"
+    }
+  },
+  {
+    "rule_id": "CIS-1.4",
+    "name": "Enable Logging / Syslog",
+    "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+    "severity": "HIGH",
+    "parameter": "logging_enabled",
+    "expected_value": true,
+    "remediation": {
+      "cisco": "configure terminal\nlogging on\nlogging host 10.0.0.100\nlogging trap informational\nend\nwrite memory",
+      "juniper": "set system syslog host 10.0.0.100 any info\ncommit",
+      "palo_alto": "set deviceconfig system syslog syslog-profile siem-server server 10.0.0.100\ncommit"
+    }
+  },
+  {
+    "rule_id": "CIS-1.5",
+    "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+    "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+    "severity": "HIGH",
+    "parameter": "snmpv3_only",
+    "expected_value": true,
+    "remediation": {
+      "cisco": "configure terminal\nno snmp-server community public\nno snmp-server community private\nsnmp-server group SNMPV3GROUP v3 priv\nend\nwrite memory",
+      "juniper": "delete snmp community public\nset snmp v3 usm local-engine user snmpv3user authentication-sha\ncommit",
+      "palo_alto": "set deviceconfig system snmpv3 views all-mibs type included oid 1\ncommit"
+    }
+  }
+]

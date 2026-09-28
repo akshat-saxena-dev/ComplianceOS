@@ -1,0 +1,1196 @@
+{
+  "stats": {
+    "total_devices": 42,
+    "compliant": 38,
+    "action_required": 4,
+    "last_scan": "2026-09-04T13:37:32.113778+00:00"
+  },
+  "last_audit": {
+    "timestamp": "2026-09-04T13:37:32.113778+00:00",
+    "vendor": "unknown",
+    "hostname": "Unknown",
+    "results": [
+      {
+        "rule_id": "CIS-1.1",
+        "name": "Disable Insecure HTTP Server",
+        "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+        "status": "FAIL",
+        "severity": "HIGH",
+        "parameter": "http_enabled",
+        "actual_value": true,
+        "expected_value": false,
+        "remediation": ""
+      },
+      {
+        "rule_id": "CIS-1.2",
+        "name": "Enable SSH / Disable Telnet",
+        "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+        "status": "NOT_CONFIGURED",
+        "severity": "CRITICAL",
+        "parameter": "ssh_only",
+        "actual_value": null,
+        "expected_value": true,
+        "remediation": ""
+      },
+      {
+        "rule_id": "CIS-1.3",
+        "name": "Enable NTP Time Synchronization",
+        "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+        "status": "NOT_CONFIGURED",
+        "severity": "MEDIUM",
+        "parameter": "ntp_enabled",
+        "actual_value": null,
+        "expected_value": true,
+        "remediation": ""
+      },
+      {
+        "rule_id": "CIS-1.4",
+        "name": "Enable Logging / Syslog",
+        "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+        "status": "NOT_CONFIGURED",
+        "severity": "HIGH",
+        "parameter": "logging_enabled",
+        "actual_value": null,
+        "expected_value": true,
+        "remediation": ""
+      },
+      {
+        "rule_id": "CIS-1.5",
+        "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+        "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+        "status": "NOT_CONFIGURED",
+        "severity": "HIGH",
+        "parameter": "snmpv3_only",
+        "actual_value": null,
+        "expected_value": true,
+        "remediation": ""
+      }
+    ],
+    "summary": {
+      "total": 5,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 4
+    },
+    "filename": "unknown.conf",
+    "unrecognized": [
+      "device-name branch-gateway-01",
+      "management https enable",
+      "remote-access telnet enable",
+      "remote-access ssh enable",
+      "time-sync enable",
+      "time-server 192.168.10.10",
+      "time-server 192.168.10.11",
+      "logging enable",
+      "syslog-server 192.168.10.50",
+      "logging-level info",
+      "snmp version 2",
+      "snmp community public",
+      "interface port1",
+      "ip 10.20.1.1/24",
+      "admin-status up",
+      "interface port2",
+      "ip 10.20.2.1/24",
+      "admin-status up",
+      "firewall enable",
+      "default-policy deny",
+      "unknown-security-feature enable"
+    ],
+    "scan_duration_ms": 3.2
+  },
+  "audit_history": [
+    {
+      "id": 16,
+      "timestamp": "2026-09-04T11:31:57.351707+00:00",
+      "filename": "cisco_test.txt",
+      "vendor": "cisco",
+      "hostname": "core-router-01",
+      "summary": {
+        "total": 5,
+        "passed": 1,
+        "failed": 1,
+        "skipped": 3
+      }
+    },
+    {
+      "id": 17,
+      "timestamp": "2026-09-04T11:31:59.417016+00:00",
+      "filename": "juniper_test.txt",
+      "vendor": "juniper",
+      "hostname": "core-router-02",
+      "summary": {
+        "total": 5,
+        "passed": 1,
+        "failed": 1,
+        "skipped": 3
+      }
+    },
+    {
+      "id": 18,
+      "timestamp": "2026-09-04T11:47:24.905455+00:00",
+      "filename": "test_cisco.conf",
+      "vendor": "cisco",
+      "hostname": "production-core-router",
+      "summary": {
+        "total": 5,
+        "passed": 2,
+        "failed": 3,
+        "skipped": 0
+      }
+    },
+    {
+      "id": 19,
+      "timestamp": "2026-09-04T11:48:19.685572+00:00",
+      "filename": "test_cisco.conf",
+      "vendor": "cisco",
+      "hostname": "production-core-router",
+      "summary": {
+        "total": 5,
+        "passed": 2,
+        "failed": 3,
+        "skipped": 0
+      }
+    },
+    {
+      "id": 20,
+      "timestamp": "2026-09-04T11:48:48.093432+00:00",
+      "filename": "test_cisco.conf",
+      "vendor": "cisco",
+      "hostname": "secure-core-router",
+      "summary": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "skipped": 0
+      }
+    },
+    {
+      "id": 21,
+      "timestamp": "2026-09-04T12:00:47.369403+00:00",
+      "filename": "test_cisco.conf",
+      "vendor": "cisco",
+      "hostname": "secure-core-router",
+      "summary": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "skipped": 0
+      }
+    },
+    {
+      "id": 21,
+      "timestamp": "2026-09-04T12:19:35.276761+00:00",
+      "filename": "test_cisco.conf",
+      "vendor": "cisco",
+      "hostname": "secure-core-router",
+      "summary": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "skipped": 0
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": false,
+          "expected_value": false,
+          "remediation": "configure terminal\nno ip http server\nno ip http secure-server\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "PASS",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nline vty 0 4\ntransport input ssh\nlogin local\nexit\ncrypto key generate rsa modulus 2048\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "PASS",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nntp server 0.pool.ntp.org\nntp server 1.pool.ntp.org\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nlogging on\nlogging host 10.0.0.100\nlogging trap informational\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "FAIL",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": false,
+          "expected_value": true,
+          "remediation": "configure terminal\nno snmp-server community public\nno snmp-server community private\nsnmp-server group SNMPV3GROUP v3 priv\nend\nwrite memory"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "timestamp": "2026-09-04T12:31:34.708737+00:00",
+      "filename": "test_cisco.conf",
+      "vendor": "cisco",
+      "hostname": "secure-core-router",
+      "summary": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "skipped": 0
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": false,
+          "expected_value": false,
+          "remediation": "configure terminal\nno ip http server\nno ip http secure-server\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "PASS",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nline vty 0 4\ntransport input ssh\nlogin local\nexit\ncrypto key generate rsa modulus 2048\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "PASS",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nntp server 0.pool.ntp.org\nntp server 1.pool.ntp.org\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nlogging on\nlogging host 10.0.0.100\nlogging trap informational\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "FAIL",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": false,
+          "expected_value": true,
+          "remediation": "configure terminal\nno snmp-server community public\nno snmp-server community private\nsnmp-server group SNMPV3GROUP v3 priv\nend\nwrite memory"
+        }
+      ],
+      "scan_duration_ms": 10.48
+    },
+    {
+      "id": 22,
+      "timestamp": "2026-09-04T13:07:17.149307+00:00",
+      "filename": "test_cisco.conf",
+      "vendor": "cisco",
+      "hostname": "secure-core-router",
+      "summary": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "skipped": 0
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": false,
+          "expected_value": false,
+          "remediation": "configure terminal\nno ip http server\nno ip http secure-server\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "PASS",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nline vty 0 4\ntransport input ssh\nlogin local\nexit\ncrypto key generate rsa modulus 2048\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "PASS",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nntp server 0.pool.ntp.org\nntp server 1.pool.ntp.org\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": true,
+          "expected_value": true,
+          "remediation": "configure terminal\nlogging on\nlogging host 10.0.0.100\nlogging trap informational\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "FAIL",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": false,
+          "expected_value": true,
+          "remediation": "configure terminal\nno snmp-server community public\nno snmp-server community private\nsnmp-server group SNMPV3GROUP v3 priv\nend\nwrite memory"
+        }
+      ],
+      "scan_duration_ms": 18.34
+    },
+    {
+      "id": 23,
+      "timestamp": "2026-09-04T13:09:03.261530+00:00",
+      "filename": "sample_unknown_commands.txt",
+      "vendor": "cisco",
+      "hostname": "mystery-device-01",
+      "summary": {
+        "total": 5,
+        "passed": 1,
+        "failed": 1,
+        "skipped": 3
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": false,
+          "expected_value": false,
+          "remediation": "configure terminal\nno ip http server\nno ip http secure-server\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "FAIL",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": false,
+          "expected_value": true,
+          "remediation": "configure terminal\nline vty 0 4\ntransport input ssh\nlogin local\nexit\ncrypto key generate rsa modulus 2048\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nntp server 0.pool.ntp.org\nntp server 1.pool.ntp.org\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nlogging on\nlogging host 10.0.0.100\nlogging trap informational\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nno snmp-server community public\nno snmp-server community private\nsnmp-server group SNMPV3GROUP v3 priv\nend\nwrite memory"
+        }
+      ],
+      "scan_duration_ms": 1.31
+    },
+    {
+      "id": 24,
+      "timestamp": "2026-09-04T13:11:00.512083+00:00",
+      "filename": "unknown.conf",
+      "vendor": "cisco",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": null,
+          "expected_value": false,
+          "remediation": "configure terminal\nno ip http server\nno ip http secure-server\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nline vty 0 4\ntransport input ssh\nlogin local\nexit\ncrypto key generate rsa modulus 2048\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nntp server 0.pool.ntp.org\nntp server 1.pool.ntp.org\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nlogging on\nlogging host 10.0.0.100\nlogging trap informational\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nno snmp-server community public\nno snmp-server community private\nsnmp-server group SNMPV3GROUP v3 priv\nend\nwrite memory"
+        }
+      ],
+      "scan_duration_ms": 7.24
+    },
+    {
+      "id": 25,
+      "timestamp": "2026-09-04T13:13:17.771239+00:00",
+      "filename": "unknown.conf",
+      "vendor": "cisco",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 4
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "PASS",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": false,
+          "expected_value": false,
+          "remediation": "configure terminal\nno ip http server\nno ip http secure-server\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nline vty 0 4\ntransport input ssh\nlogin local\nexit\ncrypto key generate rsa modulus 2048\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nntp server 0.pool.ntp.org\nntp server 1.pool.ntp.org\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nlogging on\nlogging host 10.0.0.100\nlogging trap informational\nend\nwrite memory"
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": "configure terminal\nno snmp-server community public\nno snmp-server community private\nsnmp-server group SNMPV3GROUP v3 priv\nend\nwrite memory"
+        }
+      ],
+      "scan_duration_ms": 15.91
+    },
+    {
+      "id": 26,
+      "timestamp": "2026-09-04T13:18:14.398852+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": null,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 1.54
+    },
+    {
+      "id": 27,
+      "timestamp": "2026-09-04T13:21:52.496104+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": null,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 3.11
+    },
+    {
+      "id": 28,
+      "timestamp": "2026-09-04T13:22:49.004960+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": null,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 0.77
+    },
+    {
+      "id": 29,
+      "timestamp": "2026-09-04T13:25:26.410117+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": null,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 1.43
+    },
+    {
+      "id": 30,
+      "timestamp": "2026-09-04T13:25:57.443545+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": null,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 2.02
+    },
+    {
+      "id": 31,
+      "timestamp": "2026-09-04T13:26:29.441576+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": null,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 1.27
+    },
+    {
+      "id": 32,
+      "timestamp": "2026-09-04T13:37:14.464626+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 1,
+        "skipped": 4
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "FAIL",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": true,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 1.2
+    },
+    {
+      "id": 33,
+      "timestamp": "2026-09-04T13:37:32.113778+00:00",
+      "filename": "unknown.conf",
+      "vendor": "unknown",
+      "hostname": "Unknown",
+      "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 1,
+        "skipped": 4
+      },
+      "results": [
+        {
+          "rule_id": "CIS-1.1",
+          "name": "Disable Insecure HTTP Server",
+          "description": "HTTP management interfaces transmit data in cleartext and must be disabled. Use HTTPS or SSH instead.",
+          "status": "FAIL",
+          "severity": "HIGH",
+          "parameter": "http_enabled",
+          "actual_value": true,
+          "expected_value": false,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.2",
+          "name": "Enable SSH / Disable Telnet",
+          "description": "Telnet transmits credentials in cleartext. All management access must use SSH only.",
+          "status": "NOT_CONFIGURED",
+          "severity": "CRITICAL",
+          "parameter": "ssh_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.3",
+          "name": "Enable NTP Time Synchronization",
+          "description": "Accurate system time is critical for log correlation, certificate validation, and forensic investigation.",
+          "status": "NOT_CONFIGURED",
+          "severity": "MEDIUM",
+          "parameter": "ntp_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.4",
+          "name": "Enable Logging / Syslog",
+          "description": "All network devices must forward logs to a central syslog server for SIEM integration and audit trails.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "logging_enabled",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        },
+        {
+          "rule_id": "CIS-1.5",
+          "name": "Disable SNMP v1/v2 (Use SNMPv3)",
+          "description": "SNMPv1 and v2 use community strings instead of authentication. SNMPv3 with auth/priv must be used.",
+          "status": "NOT_CONFIGURED",
+          "severity": "HIGH",
+          "parameter": "snmpv3_only",
+          "actual_value": null,
+          "expected_value": true,
+          "remediation": ""
+        }
+      ],
+      "scan_duration_ms": 3.2
+    }
+  ],
+  "unrecognized_commands": [
+    "time-server 192.168.10.11",
+    "firewall enable",
+    "logging enable",
+    "ip 10.20.2.1/24",
+    "unknown-security-feature enable",
+    "time-sync enable",
+    "device-name branch-gateway-01",
+    "admin-status up",
+    "management https enable",
+    "syslog-server 192.168.10.50",
+    "snmp version 2",
+    "interface port2",
+    "remote-access ssh enable",
+    "logging-level info",
+    "snmp community public",
+    "ip 10.20.1.1/24",
+    "default-policy deny",
+    "time-server 192.168.10.10",
+    "remote-access telnet enable",
+    "interface port1"
+  ]
+}
