@@ -1,8 +1,0 @@
-set system host-name core-router-02
-set system services web-management
-set system services ssh
-delete system services telnet
-set system ntp server 0.pool.ntp.org
-set system syslog host 10.0.0.100 any info
-delete snmp community public
-set snmp v3 usm local-engine user snmpv3user authentication-sha

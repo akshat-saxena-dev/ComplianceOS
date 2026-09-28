@@ -33,3 +33,11 @@ build/
 # Python tooling
 .pytest_cache/
 .mypy_cache/
+
+
+
+# Test / sample configuration files
+/sample_*.txt
+/test_*.conf
+/unknown.conf
+*_test.txt

@@ -1,6 +1,0 @@
-hostname mystery-device-01
-ip http server
-transport input telnet
-set nonstandard-command something
-unknown-vendor-feature enable
-custom-acl policy permit any
