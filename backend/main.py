@@ -27,31 +27,44 @@ from reporter import generate_pdf
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
-DATABASE_FILE = os.path.join(DATA_DIR, "database.json")
-MAPPINGS_FILE = os.path.join(DATA_DIR, "mappings.json")
+_SEED_DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+_SEED_DATABASE_FILE = os.path.join(_SEED_DATA_DIR, "database.json")
+_SEED_MAPPINGS_FILE = os.path.join(_SEED_DATA_DIR, "mappings.json")
+
+# /tmp is writable on Vercel serverless; seed files in data/ are read-only.
+# Writes go to /tmp; reads prefer /tmp (written data) over the seed.
+_TMP_DATABASE_FILE = "/tmp/complianceos_database.json"
+_TMP_MAPPINGS_FILE = "/tmp/complianceos_mappings.json"
+
+
+def _effective_db_path() -> str:
+    return _TMP_DATABASE_FILE if os.path.exists(_TMP_DATABASE_FILE) else _SEED_DATABASE_FILE
+
+
+def _effective_mappings_path() -> str:
+    return _TMP_MAPPINGS_FILE if os.path.exists(_TMP_MAPPINGS_FILE) else _SEED_MAPPINGS_FILE
 
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 def read_db() -> Dict:
-    with open(DATABASE_FILE, "r") as f:
+    with open(_effective_db_path(), "r") as f:
         return json.load(f)
 
 
 def write_db(data: Dict) -> None:
-    with open(DATABASE_FILE, "w") as f:
+    with open(_TMP_DATABASE_FILE, "w") as f:
         json.dump(data, f, indent=2, default=str)
 
 
 def read_mappings() -> Dict:
-    with open(MAPPINGS_FILE, "r") as f:
+    with open(_effective_mappings_path(), "r") as f:
         return json.load(f)
 
 
 def write_mappings(data: Dict) -> None:
-    with open(MAPPINGS_FILE, "w") as f:
+    with open(_TMP_MAPPINGS_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
 
