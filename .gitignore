@@ -41,3 +41,5 @@ build/
 /test_*.conf
 /unknown.conf
 *_test.txt
+.vercel
+.env*
